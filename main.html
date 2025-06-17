@@ -1,19 +1,17 @@
 <script>
-  function fibonacci(num) {
-      if (num === 1) return 0;
-      if (num === 2) return 1;
+    function fibonacci(num) {
+        if (num === 0) return 0;
+        if (num === 1) return 1;
 
-      let a = 0, b = 1, fib;
+        let a = 0, b = 1, fib;
+        for (let i = 2; i <= num; i++) {
+            fib = a + b;
+            a = b;
+            b = fib;
+        }
+        return a;
+    }
 
-      for (let i = 3; i <= num; i++) {
-          fib = a + b;
-          a = b;
-          b = fib;
-      }
-
-      return b;
-  }
-
-  let n = parseInt(prompt("Enter which Fibonacci number to find:"));
-  alert(fibonacci(n));
+    // DO NOT use prompt/alert when submitting!
+    // Just define the function correctly.
 </script>
